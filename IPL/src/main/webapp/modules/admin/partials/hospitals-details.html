@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header">Hospital</h3>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form" id="saveUpateHospitalForm" method="post">
+                        
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control inp-dt"  name='name'>
+                                <p class="help-block smap-fm-er depName">Please fill this field</p>
+                            </div>
+                           <div class="form-group">
+                                <label>Phone</label>
+                                <input class="form-control inp-dt"  name='phoneNo'>
+                                <p class="help-block smap-fm-er depName">Please fill this field</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control inp-dt" rows="5" name='description'></textarea>
+                                <p class="help-block smap-fm-er deptDescription">Please fill this field</p>
+                            </div>                                                       
+                           <div class="row">
+								<div class="col-md-12 "><p>Hospital Images</p></div>
+								<div id="hosp-upimg-container" >
+								<!-- uploaded images  -->
+								</div>								    
+                            </div>                            
+                           <div class="form-group">
+                           			<br/>
+                           			<div tabindex="500" class="btn btn-primary btn-file">
+                           			<i class="glyphicon glyphicon-folder-open"></i> &nbsp;Browse …
+                           			<input id="hosp-img-upbtn" type="file" multiple="true" class="">
+                           			</div>                          
+                             </div>
+                            <input type="hidden" class="inp-dt"  name="id" value="0"/>                            
+                            <input type="submit" class="btn btn-default" value="Save" />
+                            <input type="button" class="btn btn-default" value="Reset" id="resetSaveHospitalFormBtn"/>
+                        </form>
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->                    
+                    <!-- /.col-lg-6 (nested) -->
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>

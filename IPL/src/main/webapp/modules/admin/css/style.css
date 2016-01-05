@@ -1,0 +1,97 @@
+
+.smap-fm-er{
+	color:red;
+	display:none;
+}
+.smap-com-form-alert{	
+	position: absolute;
+	z-index: 9999;
+	left: 30%;
+	top: 10%;
+	width: 50%;
+	display:none;
+}
+.nav>li.active > a {
+	background:  #e7e7e7;
+}
+
+.btn-file input[type=file] {
+position: absolute;
+top: 0;
+right: 0;
+min-width: 100%;
+min-height: 100%;
+text-align: right;
+opacity: 0;
+background: 0 0;
+cursor: inherit;
+display: block;
+}
+.btn-file {
+position: relative;
+overflow: hidden;
+}
+#dr-consult-cal{
+	height:500px;
+}
+.fc-time-grid-container.fc-scroller{
+	height:400px!important;
+}
+.timeline {
+	position: absolute;
+	left: 59px;
+	border: none;
+	border-top: 1px solid red;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	z-index: 999;
+}
+
+.form-group .bootstrap-tagsinput  {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+}
+.form-group .bootstrap-tagsinput  .label{
+	font-weight: 500;
+	    color: #000;
+    font-size: 90%;
+}	
+.form-group .bootstrap-tagsinput .label-info {
+	background-color: #ccc;
+}
+.form-group .input-group-btn .btn {
+    height: 100%;
+    padding-top: 2px;
+    margin-top: -9px;
+}
+
+.bootstrap-tagsinput input, .form-group .bootstrap-tagsinput .label-info {
+	text-transform: uppercase;
+}
+#doctorConsultTimeModal .checkbox-inline{	
+	margin-left: 10px!important;
+	width: 103px;
+}
+.smap-com-modal-alert{
+	margin-bottom: 0px!important;
+	z-index: 9999;
+	display:none;
+}
+.bgoverlay {
+  background: rgba(255,255,255,0.8);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1234;
+  top: 0;
+  display: none; 
+}
+.common_loader{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  z-index:12345;
+  display: none;
+}
