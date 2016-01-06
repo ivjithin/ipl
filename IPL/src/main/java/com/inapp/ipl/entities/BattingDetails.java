@@ -23,13 +23,23 @@ public class BattingDetails {
 	private Team teamId;
 	private int isBatted;
 	private int battingOrder;
-	private int memberId;
+	@OneToOne
+	@JoinColumn(name = "memberId")
+	private Member memberId;
 	private int runs;
 	private int balls;
 	private int fours;
 	private int sixes;
 	private int wicketStatus;
 	private String wicketDescription;
+	
+	
+	public Member getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(Member memberId) {
+		this.memberId = memberId;
+	}
 	public int getId() {
 		return id;
 	}
@@ -66,12 +76,7 @@ public class BattingDetails {
 	public void setBattingOrder(int battingOrder) {
 		this.battingOrder = battingOrder;
 	}
-	public int getMemberId() {
-		return memberId;
-	}
-	public void setMemberId(int memberId) {
-		this.memberId = memberId;
-	}
+	
 	public int getRuns() {
 		return runs;
 	}

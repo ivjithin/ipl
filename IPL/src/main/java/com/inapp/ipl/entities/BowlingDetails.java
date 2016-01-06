@@ -21,11 +21,81 @@ public class BowlingDetails {
 	@OneToOne
 	@JoinColumn(name = "teamId")
 	private Team teamId;	
-	private int memberId;
+	@OneToOne
+	@JoinColumn(name = "memberId")
+	private Member memberId;
 	private int overs;
 	private int maiden;
 	private int runsGiven;
 	private int wickets;
 	private int catches;
 	private int runout;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getMatchId() {
+		return matchId;
+	}
+	public void setMatchId(int matchId) {
+		this.matchId = matchId;
+	}
+	public int getInnings() {
+		return innings;
+	}
+	public void setInnings(int innings) {
+		this.innings = innings;
+	}
+	public Team getTeamId() {
+		return teamId;
+	}
+	public void setTeamId(Team teamId) {
+		this.teamId = teamId;
+	}
+	public Member getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(Member memberId) {
+		this.memberId = memberId;
+	}
+	public int getOvers() {
+		return overs;
+	}
+	public void setOvers(int overs) {
+		this.overs = overs;
+	}
+	public int getMaiden() {
+		return maiden;
+	}
+	public void setMaiden(int maiden) {
+		this.maiden = maiden;
+	}
+	public int getRunsGiven() {
+		return runsGiven;
+	}
+	public void setRunsGiven(int runsGiven) {
+		this.runsGiven = runsGiven;
+	}
+	public int getWickets() {
+		return wickets;
+	}
+	public void setWickets(int wickets) {
+		this.wickets = wickets;
+	}
+	public int getCatches() {
+		return catches;
+	}
+	public void setCatches(int catches) {
+		this.catches = catches;
+	}
+	public int getRunout() {
+		return runout;
+	}
+	public void setRunout(int runout) {
+		this.runout = runout;
+	}
+	
+	
 }
