@@ -16,6 +16,9 @@
     <link rel="stylesheet" type="text/css" href="../../assets/lib/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/lib/css/dataTables.bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../assets/lib/css/select2.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/lib/js/jquery-ui-1.11.4/jquery-ui.min.css">
+    
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/themes/flat-blue.css">
@@ -131,8 +134,25 @@
 									<form class="form-inline">
 										<div>
 
+										
+											<div class="form-group" >
+												<label for="exampleInputName2">Match Id </label>
+												<input type="text"  />
+											</div>
+												<div class="form-group">&nbsp;&nbsp;</div>
 											<div class="form-group">
-												<label for="exampleInputName2">Team 1 </label> <select>
+												<label for="exampleInputName2">Match Type </label> <select>
+													<option value="-1"> Match Type</option>
+													<option value="Q">Qualifier</option>
+													<option value="E">Eliminator</option>
+													<option value="S">Semi Final</option>
+													<option value="F">Final</option>
+												
+												</select>
+											</div>
+												<div class="form-group">&nbsp;&nbsp;</div>
+											<div class="form-group">
+												<label for="exampleInputName2">Toss </label> <select>
 													<option value="-1">Select Team</option>
 													<option value="1">Mad Catz</option>
 													<option value="2">Win Gaurus</option>
@@ -141,44 +161,26 @@
 													<option value="5">Dragons</option>
 												</select>
 											</div>
-											<div class="form-group">
-												<i>VS</i>
-											</div>
-											<div class="form-group">
-												<label for="exampleInputName2"> Team 2 </label> <select>
-													<option value="-1">Select Team</option>
-													<option value="1">Mad Catz</option>
-													<option value="2">Win Gaurus</option>
-													<option value="3">Meduza</option>
-													<option value="4">Theeppori Bros</option>
-													<option value="5">Dragons</option>
-												</select>
-											</div>
-											 <div class="sub-title"> &nbsp; </div>
-											 <div  class="row">
-											  	 <div class="form-group col-lg-4" style="width:315px;">
-                                            		<label for="exampleInputName2"><b>Ist Innings  &nbsp; : </b> </label>
-                                            		<input type="text" class="form-control" id="Score" placeholder="Score"> 
-                                       			 </div>
-                                       			   <div class="form-group col-lg-2">                                           
-                                            		<input type="text" class="form-control" id="Wickets" placeholder="Wickets">
-                                       			 </div>
-                                                  <div class="form-group col-lg-2">                                    
-                                            		<input type="text" class="form-control" id="Overs" placeholder="Overs">
-                                       			 </div>
-                                    		</div>
-                                    		<div  class="row">
-											  	 <div class="form-group col-xs-4" style="width:315px;">
-                                            		<label for="exampleInputName2"><b>IInd Innings : </b> </label>
-                                            		<input type="text" class="form-control" id="Score" placeholder="Score">
-                                       			 </div>
-                                       			   <div class="form-group col-xs-2">                                            
-                                            		<input type="text" class="form-control" id="Wickets" placeholder="Wickets">
-                                       			 </div>
-                                                  <div class="form-group col-xs-2">                                            	
-                                            		<input type="text" class="form-control" id="Overs" placeholder="Overs">
-                                       			 </div>
-                                    		</div>
+											
+											
+				<br/><br/>					
+	<div class="form-group">
+		<label for="exampleInputName2">Winner &nbsp;&nbsp;</label> 
+		<select id="winnerTeam">
+			<option value="-1">Select Team</option>
+			<option value="1">Mad Catz</option>
+			<option value="2">Win Gaurus</option>
+			<option value="3">Meduza</option>
+			<option value="4">Theeppori Bros</option>
+			<option value="5">Dragons</option>
+		</select>
+	</div>
+											
+			<div class="form-group" >
+				<label for="exampleInputName2">&nbsp;&nbsp;Results </label>
+				<input type="text"  />
+			</div>
+                               <div class="sub-title"> &nbsp; </div>      	
 										</div>
 
 										
@@ -196,109 +198,243 @@
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3>Ist Innings</h3>
-   
+      <h3>Ist Innings </h3>
 
+			
 <!-- Ist Inings starts here  -->
 
- <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="sub-title">Battings <span class="description">( xxxxx )</span></div>
-                                           <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Player</th>
-                                                        <th>Runs</th>
-                                                        <th>Balls</th>
-                                                        <th>4s</th>
-                                                        <th>6s</th>
-                                                        <th>Fielder</th>
-                                                        <th>Bowler</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                         <th scope="row">1</th>
-                                                         <td><input type="text"   ></td>
-                                                         <td><input type="text" class="col-lg-3"/></td>
-                                                         <td><input type="text" class="col-lg-3"/></td>
-                                                         <td><input type="text" class="col-lg-2"/></td>
-                                                         <td><input type="text" class="col-lg-2"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                         <td><input type="text"   ></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text" class="col-lg-2"/></td>
-                                                         <td><input type="text" class="col-lg-2"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                         <td><input type="text"   ></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text" class="col-lg-2"/></td>
-                                                         <td><input type="text" class="col-lg-2"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="sub-title">Bowling<span class="description">( xxxxxxx )</span></div>
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Player</th>
-                                                        <th>Overs</th>
-                                                        <th>M</th>
-                                                        <th>Runs</th>
-                                                        <th>Wickets</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                         <th scope="row">1</th>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                     <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                         <td><input type="text"/></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+<select>
+	<option value="-1">Select Team</option>
+	<option value="1">Mad Catz</option>
+	<option value="2">Win Gaurus</option>
+	<option value="3">Meduza</option>
+	<option value="4">Theeppori Bros</option>
+	<option value="5">Dragons</option>
+</select>
 
+<div class="row">
+      <div class="col-sm-12">
+          <div class="sub-title">Batting </div>
+         <table class="table table-bordered ">
+              <thead>
+                  <tr>
+                      <th>#</th>
+                      <th class="col-md-2">Player</th>
+                      <th>Runs</th>
+                      <th>Balls</th>
+                      <th>4s</th>
+                      <th>6s</th>
+                      <th>Out Status</th>
+                      <th>Batting Status</th>
+                      <th class="col-md-4">Wicket Descriptions</th>
+       
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                       <td scope="row">1</td>
+                       <td><input type="text" class="col-lg-12"  ></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="checkbox" ></td>
+                       <td><input type="checkbox" ></td>
+                       <td><input type="text" class="col-lg-12"/></td>
+   
+                  </tr>
+             
+                   <tr>
+                       <td scope="row">2</td>
+                       <td><input type="text" class="col-lg-12"  ></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="checkbox" ></td>
+                        <td><input type="checkbox" ></td>
+                       <td><input type="text" class="col-lg-12"/></td>
+   
+                  </tr>
+             
+                   <tr>
+                       <td scope="row">3</td>
+                       <td><input type="text" class="col-lg-12"  ></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="checkbox" ></td>
+                        <td><input type="checkbox" ></td>
+                       <td><input type="text" class="col-lg-12"/></td>
+   
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="col-sm-12">
+          <div class="sub-title">Bowling </div>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>#</th>
+                      <th class="col-md-2">Player</th>
+                      <th>Overs</th>
+                      <th>M</th>
+                      <th>Runs</th>
+                      <th>Wickets</th>
+                      <th>Econ</th>
+                      <th>Catches</th>
+                      <th>Runouts</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                       <th scope="row">1</th>
+                       <td><input type="text" class="col-lg-12"/></td>
+                         <td><input type="text" class="col-lg-10"/></td>
+                        <td><input type="text" class="col-lg-10"/></td>
+                        <td><input type="text" class="col-lg-10"/></td>
+                         <td><input type="text" class="col-lg-10"/></td>
+                          <td><input type="text" class="col-lg-10"/></td>
+                    <td><input type="text" class="col-lg-10"/></td>
+              <td><input type="text" class="col-lg-10"/></td>
+                  </tr>
+
+
+              </tbody>
+          </table>
+      </div>
+ </div>
+
+ <div  class="row">
+ 	         <div > <b> Total   </b> </div>
+              <div class="form-group col-lg-2" >
+      	
+      		<input type="text" class="form-control" id="Score" placeholder="Score"> 
+ 			 </div>
+ 			   <div class="form-group col-lg-2">                                           
+      		<input type="text" class="form-control" id="Wickets" placeholder="Wickets">
+ 			 </div>
+            <div class="form-group col-lg-2">                                    
+      		<input type="text" class="form-control" id="Overs" placeholder="Overs">
+ 			 </div>
+ 			 
+ 			   <div class="form-group col-xs-2">                                            	
+      		<input type="text" class="form-control" id="Extras" placeholder="Extras">
+ 			 </div>
+</div>
+                                    		
 <!-- Ist Inning ends here -->
     </div>
     <div id="menu1" class="tab-pane fade">
       <h3>IInd Innings </h3>
-      <p>IInd Innings </p>
+<!-- IInd Innings starts here  -->
+
+<select>
+	<option value="-1">Select Team</option>
+	<option value="1">Mad Catz</option>
+	<option value="2">Win Gaurus</option>
+	<option value="3">Meduza</option>
+	<option value="4">Theeppori Bros</option>
+	<option value="5">Dragons</option>
+</select>
+
+<div class="row">
+      <div class="col-sm-12">
+          <div class="sub-title">Batting </div>
+         <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>#</th>
+                      <th class="col-md-2">Player</th>
+                      <th>Runs</th>
+                      <th>Balls</th>
+                      <th>4s</th>
+                      <th>6s</th>
+                      <th>Out Status</th>
+                      <th>Batting Status</th>
+                      <th class="col-md-4">Wicket Descriptions</th>
+       
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                       <td scope="row">1</td>
+                       <td><input type="text" class="col-lg-12"  ></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="text" class="col-lg-10"/></td>
+                       <td><input type="checkbox" ></td>
+                        <td><input type="checkbox" ></td>
+                       <td><input type="text" class="col-lg-12"/></td>
+   
+                  </tr>
+             
+             
+             
+
+              </tbody>
+          </table>
+      </div>
+      <div class="col-sm-12">
+          <div class="sub-title">Bowling </div>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>#</th>
+                      <th class="col-md-2">Player</th>
+                      <th>Overs</th>
+                      <th>M</th>
+                      <th>Runs</th>
+                      <th>Wickets</th>
+                      <th>Econ</th>
+                      <th>Catches</th>
+                      <th>Runouts</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                       <th scope="row">1</th>
+                       <td><input type="text" class="col-lg-12"/></td>
+                         <td><input type="text" class="col-lg-10"/></td>
+                        <td><input type="text" class="col-lg-10"/></td>
+                        <td><input type="text" class="col-lg-10"/></td>
+                         <td><input type="text" class="col-lg-10"/></td>
+                          <td><input type="text" class="col-lg-10"/></td>
+                    <td><input type="text" class="col-lg-10"/></td>
+              <td><input type="text" class="col-lg-10"/></td>
+                  </tr>
+
+
+              </tbody>
+          </table>
+      </div>
+ </div>
+
+ <div  class="row">
+ 	         <div > <b> Total   </b> </div>
+              <div class="form-group col-lg-2" >
+      	
+      		<input type="text" class="form-control" id="Score" placeholder="Score"> 
+ 			 </div>
+ 			   <div class="form-group col-lg-2">                                           
+      		<input type="text" class="form-control" id="Wickets" placeholder="Wickets">
+ 			 </div>
+            <div class="form-group col-lg-2">                                    
+      		<input type="text" class="form-control" id="Overs" placeholder="Overs">
+ 			 </div>
+ 			 
+ 			   <div class="form-group col-xs-2">                                            	
+      		<input type="text" class="form-control" id="Extras" placeholder="Extras">
+ 			 </div>
+</div>
+ 
+ 
+
+ <!-- IInd Innings ends here  -->
+ 
     </div>
 
   </div>
@@ -327,6 +463,8 @@
     <div>
     <!-- Javascript Libs -->
     <script type="text/javascript" src="../../assets/lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../assets/lib/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    
     <script type="text/javascript" src="../../assets/lib/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../assets/lib/js/Chart.min.js"></script>
     <script type="text/javascript" src="../../assets/lib/js/bootstrap-switch.min.js"></script>
