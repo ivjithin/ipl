@@ -68,13 +68,13 @@ var contextPath="";
 				var battingObj={};
 				var memberid=$(this).data("memberid");		
 				battingObj["memberId"]={"id":memberid};				
-				battingObj["runs"]=$(this).find("input[name=runs]").val();
-				battingObj["balls"]=$(this).find("input[name=balls]").val();				
-				battingObj["four"]=$(this).find("input[name=four]").val();				
-				battingObj["six"]=$(this).find("input[name=six]").val();				
+				battingObj["runs"]=$(this).find("input[name=runs]").val()*1;
+				battingObj["balls"]=$(this).find("input[name=balls]").val()*1;				
+				battingObj["four"]=$(this).find("input[name=four]").val()*1;				
+				battingObj["six"]=$(this).find("input[name=six]").val()*1;				
 				battingObj["isBatted"]=$(this).find("input[name=isBatted]").is(':checked')?1:0;
 				battingObj["wicketStatus"]=$(this).find("input[name=wicketStatus]").is(':checked')?1:0;				
-				battingObj["wicketDescription"]=$(this).find("input[name=wicketDescription]").val();
+				battingObj["wicketDescription"]=$(this).find("input[name=wicketDescription]").val()*1;
 				battingArr.push(battingObj);
 			});
 		
@@ -87,13 +87,13 @@ var contextPath="";
 				var memberid=$(this).data("memberid");		
 				bowlingObj["memberId"]={"id":memberid};		
 				
-				bowlingObj["overs"]=$(this).find("input[name=overs]").val();
-				bowlingObj["maiden"]=$(this).find("input[name=maiden]").val();				
-				bowlingObj["dotBalls"]=$(this).find("input[name=dotBalls]").val();				
-				bowlingObj["runsGiven"]=$(this).find("input[name=runsGiven]").val();				
-				bowlingObj["economy"]=$(this).find("input[name=economy]").val();
-				bowlingObj["catches"]=$(this).find("input[name=catches]").val();			
-				bowlingObj["runout"]=$(this).find("input[name=runout]").val();
+				bowlingObj["overs"]=$(this).find("input[name=overs]").val()*1;
+				bowlingObj["maiden"]=$(this).find("input[name=maiden]").val()*1;				
+				bowlingObj["dotBalls"]=$(this).find("input[name=dotBalls]").val()*1;				
+				bowlingObj["runsGiven"]=$(this).find("input[name=runsGiven]").val()*1;				
+				bowlingObj["economy"]=$(this).find("input[name=economy]").val()*1;
+				bowlingObj["catches"]=$(this).find("input[name=catches]").val()*1;			
+				bowlingObj["runout"]=$(this).find("input[name=runout]").val()*1;
 				bowlingArr.push(bowlingObj);
 			});
 			return bowlingArr;
@@ -106,20 +106,20 @@ var contextPath="";
 			summary["matchNo"]=$("#matchNo").val();
 			summary["matchType"]=$("#matchType").val();
 			summary["toss"]=$("#matchToss").val();	
-			summary["team1"]={"team":$("#firstInnTeamSelect").val()};
-			summary["team2"]={"team":$("#secondInnTeamSelect").val()};
+			summary["team1"]={"team":$("#firstInnTeamSelect").val()*1};
+			summary["team2"]={"team":$("#secondInnTeamSelect").val()*1};
 				
-			summary["firstIngsTeam"]=$("#firstInnTeamSelect").val();			
-			summary["firstIngsScore"]=$("#firstIngsScore").val();
-			summary["firstIngsWicket"]=$("#firstIngsWicket").val();
-			summary["firstIngsOver"]=	$("#firstIngsOver").val();						
-			summary["firstIngsExtras"]=$("#firstIngsExtras").val();
+			summary["firstIngsTeam"]=$("#firstInnTeamSelect").val()*1;			
+			summary["firstIngsScore"]=$("#firstIngsScore").val()*1;
+			summary["firstIngsWicket"]=$("#firstIngsWicket").val()*1;
+			summary["firstIngsOver"]=	$("#firstIngsOver").val()*1;						
+			summary["firstIngsExtras"]=$("#firstIngsExtras").val()*1;
 				
-			summary["scndIngsTeam"]=$("#secondInnTeamSelect").val();				
-			summary["scndIngsScore"]=$("#scndIngsScore").val();
-			summary["scndIngsWicket"]=$("#scndIngsWicket").val();
-			summary["scndIngsOver"]=$("#scndIngsOver").val();							
-			summary["scndIngsExtras"]=	$("#scndIngsExtras").val();	
+			summary["scndIngsTeam"]=$("#secondInnTeamSelect").val()*1;				
+			summary["scndIngsScore"]=$("#scndIngsScore").val()*1;
+			summary["scndIngsWicket"]=$("#scndIngsWicket").val()*1;
+			summary["scndIngsOver"]=$("#scndIngsOver").val()*1;							
+			summary["scndIngsExtras"]=	$("#scndIngsExtras").val()*1;	
 				
 			summary["winner"]=$("#winnerTeam").val();
 			summary["result"]=$("#winnerTeamResults").val();
@@ -155,9 +155,27 @@ var contextPath="";
 			
 			
 		};
+		
+		var updateTableIndex=function(){
+			
+			 $("#firstInnBattingtable tbody tr").each(function(i){
+				 $(this).find("td:eq(0)").html((i*1+1));
+			 });
+			 $("#firstInnBowlingtable tbody tr").each(function(i){
+				 $(this).find("td:eq(0)").html((i*1+1));
+			 });
+			 
+			 $("#secondInnBattingtable tbody tr").each(function(i){
+				 $(this).find("td:eq(0)").html((i*1+1));
+			 });
+			 
+			 $("#secondInnBowlingtable tbody tr").each(function(i){
+				 $(this).find("td:eq(0)").html((i*1+1));
+			 });
+		};
 		return {
 			populateBattingDtls:populateBattingDtls,
-	
+			updateTableIndex:updateTableIndex,
 			saveMatch:saveMatch
 			
 		};
@@ -167,20 +185,7 @@ var contextPath="";
 		boostrapComponentsFn : function(){
 			 $("table tbody").sortable({ 				     
 				 stop: function(event,ui) {
-					 $("#firstInnBattingtable tbody tr").each(function(i){
-						 $(this).find("td:eq(0)").html((i*1+1));
-					 });
-					 $("#firstInnBowlingtable tbody tr").each(function(i){
-						 $(this).find("td:eq(0)").html((i*1+1));
-					 });
-					 
-					 $("#secondInnBattingtable tbody tr").each(function(i){
-						 $(this).find("td:eq(0)").html((i*1+1));
-					 });
-					 
-					 $("#secondInnBowlingtable tbody tr").each(function(i){
-						 $(this).find("td:eq(0)").html((i*1+1));
-					 });
+					 service.updateTableIndex();
 				 }  
 			 }).disableSelection();
 				
@@ -206,9 +211,10 @@ var contextPath="";
 				
 				service.saveMatch();
 			});
-			$(".removeCl").on("click",function(){
-				alert("ddd")
+			$("table").on("click","a.removeCl",function(){
+			
 				$(this).parent().parent().remove();
+				 service.updateTableIndex();
 			});
 		},
 		load : function() {
