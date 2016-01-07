@@ -26,4 +26,16 @@ public class StatsService {
 		return statsDAO.gethighestStrikeRate();
 	}
 
+	public Object getLeadingWicketTakers()throws Exception{
+		return statsDAO.getLeadingWicketTakers();
+	}
+
+	public Object getBestEconomy() throws Exception{
+		return statsDAO.getBestEconomy();
+	}
+
+	public Object getMVP() throws Exception {
+		return statsDAO.getMVP();
+	}
+
 }
