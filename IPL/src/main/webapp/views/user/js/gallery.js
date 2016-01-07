@@ -10,9 +10,18 @@ var contextPath="";
 					method:'GET'
 				//	contentType:'application/json',			
 			};
-		
 			IPLCom.ajaxService.invoke(apiObj).done(function(res) {
-					console.log(" res",res)			
+					console.log(" res",res)	
+					
+					var html="";
+					var imgAr=res.result;
+					for(var i in imgAr){
+						var obj =imgAr[i];
+						
+						html+="<a class='fancybox' href='../../assets/galleryImgs/"+obj+"' data-fancybox-group='gallery' title='Lorem ipsum dolor sit amet'><img style='width:100px; height:100px;' src='../../assets/galleryImgs/"+obj+"' alt='' /></a>";
+					}
+					$("#imgContainer").html(html);
+					
 			}).fail(IPLCom.exceptionHandler.ajaxFailure);
 			
 		},	
