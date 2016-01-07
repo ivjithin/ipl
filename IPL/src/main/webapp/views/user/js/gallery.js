@@ -18,7 +18,7 @@ var contextPath="";
 					for(var i in imgAr){
 						var obj =imgAr[i];
 						
-						html+="<a class='fancybox' href='../../assets/galleryImgs/"+obj+"' data-fancybox-group='gallery' title='Lorem ipsum dolor sit amet'><img style='width:100px; height:100px;' src='../../assets/galleryImgs/"+obj+"' alt='' /></a>";
+						html+="<a class='fancybox' href='../../assets/galleryImgs/"+obj+"' data-fancybox-group='gallery' title=''><img style='width:100px; height:100px;' src='../../assets/galleryImgs/"+obj+"' alt='' /></a>";
 					}
 					$("#imgContainer").html(html);
 					
