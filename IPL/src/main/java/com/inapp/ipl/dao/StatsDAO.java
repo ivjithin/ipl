@@ -16,9 +16,9 @@ public class StatsDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	static final String battingSql = "SELECT memberName,teamName,totMatches,totRuns,totBallsFaced,strikeRate,totFours,totSixes"
+	static final String battingSql = "SELECT memberName,imageUrl,teamName,totMatches,totRuns,totBallsFaced,strikeRate,totFours,totSixes"
 			+ " from playersStats";
-	static final String bowlingSql = "SELECT memberName,teamName,totMatches,totBallsDelivered,totWickets,totCatches,totRunOuts,totRunsGiven,economy"
+	static final String bowlingSql = "SELECT memberName,imageUrl,teamName,totMatches,totBallsDelivered,totWickets,totCatches,totRunOuts,totRunsGiven,economy"
 			+ " from playersStats";
 
 	@SuppressWarnings("unchecked")
@@ -163,7 +163,7 @@ public class StatsDAO {
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public Object getMVP() throws Exception {
-		String sql = "select memberName,teamName,totMatches,totRuns,totFours,totSixes,totWickets,totCatches,totRunOuts,point from"
+		String sql = "select memberName,imageUrl,teamName,totMatches,totRuns,totFours,totSixes,totWickets,totCatches,totRunOuts,point from"
 				+ " playersStats order by point desc";
 
 		List<HashMap<String, Object>> aliasToValueMapList = null;
