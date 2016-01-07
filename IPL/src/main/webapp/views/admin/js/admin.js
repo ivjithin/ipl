@@ -11,8 +11,8 @@ var contextPath="";
 			
 			for(var i in battingDtls){
 				var eachObj=battingDtls[i];	
-			
-				battingHtml+="<tr data-memberid='"+eachObj.id+"'>";
+			console.log(eachObj)
+				battingHtml+="<tr data-memberid='"+eachObj.id+"' data-teamid='"+eachObj.team.id+"'>";
 				battingHtml+="<td scope='row'>"+(i*1+1)+"</td>";
 				battingHtml+="<td><input type='text' name='playername' class='col-lg-12' value="+eachObj.name+" readOnly ></td>";
 				battingHtml+="<td><input type='text' name='runs'  class='col-lg-10'/></td>";
@@ -25,7 +25,7 @@ var contextPath="";
 				battingHtml+="<td><a href='javascript:void(0)' class='removeCl'>remove</a></td>";
 				battingHtml+="</tr>";	
 								
-				bowlingHtml+="<tr>";
+				bowlingHtml+="<tr  data-memberid='"+eachObj.id+"' data-teamid='"+eachObj.team.id+"'>";
 				bowlingHtml+="<th scope='row'>"+(i*1+1)+"</th>";
 				bowlingHtml+="<td><input type='text' name='playername'  class='col-lg-12' value="+eachObj.name+" readOnly /></td>";
 				bowlingHtml+="<td><input type='text' name='overs'  class='col-lg-10' /></td>";
@@ -66,8 +66,10 @@ var contextPath="";
 			var battingArr=[];
 			$(tableEl+" tbody tr").each(function(){	
 				var battingObj={};
-				var memberid=$(this).data("memberid");		
-				battingObj["memberId"]={"id":memberid};				
+				var memberid=$(this).data("memberid"),
+				teamId=$(this).data("teamid");
+				battingObj["memberId"]={"id":memberid};	
+				battingObj["teamId"]={"id":teamId};	
 				battingObj["runs"]=$(this).find("input[name=runs]").val()*1;
 				battingObj["balls"]=$(this).find("input[name=balls]").val()*1;				
 				battingObj["four"]=$(this).find("input[name=four]").val()*1;				
@@ -84,8 +86,10 @@ var contextPath="";
 			var bowlingArr=[];
 			$(tableEl+" tbody tr").each(function(){	
 				var bowlingObj={};
-				var memberid=$(this).data("memberid");		
+				var memberid=$(this).data("memberid"),
+					teamId=$(this).data("teamid");
 				bowlingObj["memberId"]={"id":memberid};		
+				bowlingObj["teamId"]={"id":teamId};	
 				
 				bowlingObj["overs"]=$(this).find("input[name=overs]").val()*1;
 				bowlingObj["maiden"]=$(this).find("input[name=maiden]").val()*1;				
@@ -106,8 +110,8 @@ var contextPath="";
 			summary["matchNo"]=$("#matchNo").val();
 			summary["matchType"]=$("#matchType").val();
 			summary["toss"]=$("#matchToss").val();	
-			summary["team1"]={"team":$("#firstInnTeamSelect").val()*1};
-			summary["team2"]={"team":$("#secondInnTeamSelect").val()*1};
+			summary["team1"]={"id":$("#firstInnTeamSelect").val()*1};
+			summary["team2"]={"id":$("#secondInnTeamSelect").val()*1};
 				
 			summary["firstIngsTeam"]=$("#firstInnTeamSelect").val()*1;			
 			summary["firstIngsScore"]=$("#firstIngsScore").val()*1;
