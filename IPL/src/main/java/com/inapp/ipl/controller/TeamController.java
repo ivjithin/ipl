@@ -18,11 +18,10 @@ public class TeamController {
 	private TeamService teamService;
 	
 	@RequestMapping(value="/members/{teamId}",method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Response getTeamMembers(@PathVariable String teamId)
+	public Response getTeamMembers(@PathVariable int teamId)
 	{
 		Response customeResponse= new Response();
 		customeResponse.put(Response.RESULT, teamService.getTeamMembers(teamId));	
-		customeResponse.put("test","hello--");
 		return customeResponse;
 		
 	}
