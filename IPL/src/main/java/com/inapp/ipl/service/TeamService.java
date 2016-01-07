@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.inapp.ipl.dao.TeamDAO;
+import com.inapp.ipl.entities.Member;
+
 
 @Service
 public class TeamService {
 	@Autowired 
 	private TeamDAO teamDAO;
-	public List<Object> getTeamMembers(String teamId)
+	public List<Member> getTeamMembers(int teamId)
 	{		
 		return teamDAO.getTeamMembers(teamId);
 		

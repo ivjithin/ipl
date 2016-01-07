@@ -6,6 +6,7 @@
 <hibernate-configuration>
 	    <session-factory>
 <!-- 	 <mapping class="com.app.smartApp.entity.DoctorConsultTime"/>  -->
-<!--  <mapping class="com.inapp.ipl.dto.Team"/> -->
+ <mapping class="com.inapp.ipl.entities.Member"/>
+  <mapping class="com.inapp.ipl.entities.Team"/>
     </session-factory>
 </hibernate-configuration>
