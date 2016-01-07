@@ -8,5 +8,6 @@
 <!-- 	 <mapping class="com.app.smartApp.entity.DoctorConsultTime"/>  -->
  <mapping class="com.inapp.ipl.entities.Member"/>
   <mapping class="com.inapp.ipl.entities.Team"/>
+   <mapping class="com.inapp.ipl.entities.Match"/>
     </session-factory>
 </hibernate-configuration>

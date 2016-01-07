@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.inapp.ipl.entities.Match;
 import com.inapp.ipl.entities.Member;
 
 
@@ -16,6 +17,7 @@ public class TeamDAO {
 	@Autowired
 	private SessionFactory hbsession;
 	private static final String GET_TEAM_MEMBERS_BY_ID="from Member where  team.id=:teamId";	
+	private static final String GET_ALL_MATHCS="from Match";
 	@Transactional
 	public List<Member> getTeamMembers(int teamId)
 	{
@@ -31,6 +33,20 @@ public class TeamDAO {
 		  }
 		return listMembers;
 		
+	}
+	@Transactional
+	public List<Match> getAllMatches() {
+		List<Match> listMatch = null;
+		  try {
+			  Query query = this.hbsession
+	                    .getCurrentSession()
+	                    .createQuery(GET_ALL_MATHCS);
+			  	  
+			  listMatch = query.list(); 
+		  }catch(Exception e){
+			 e.printStackTrace();
+		  }
+		return listMatch;
 	}
 
 }

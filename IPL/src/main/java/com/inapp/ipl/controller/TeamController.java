@@ -26,4 +26,13 @@ public class TeamController {
 		
 	}
 	
+	@RequestMapping(value="/allmatches",method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Response getAllMatches()
+	{
+		Response customeResponse= new Response();
+		customeResponse.put(Response.RESULT, teamService.getAllMatches());	
+		return customeResponse;
+		
+	}
+	
 }
