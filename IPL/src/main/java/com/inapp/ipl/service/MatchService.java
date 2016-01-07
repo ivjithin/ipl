@@ -1,20 +1,26 @@
 package com.inapp.ipl.service;
 
+
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.inapp.ipl.dao.MatchDAO;
+import com.inapp.ipl.dao.TeamDAO;
 import com.inapp.ipl.dto.Match;
 import com.inapp.ipl.entities.BattingDetails;
 import com.inapp.ipl.entities.BowlingDetails;
+import com.inapp.ipl.entities.MatchDetails;
 
 @Service
 public class MatchService {
-
-	@Autowired
-	private MatchDAO matchDAO;
+	
+@Autowired
+private TeamDAO teamDAO;
+@Autowired
+private MatchDAO matchDAO;
 
 	public boolean saveMatchDetails(Match match) {
 		int matchId = matchDAO.saveSummary(match.getSummary());
@@ -37,4 +43,7 @@ public class MatchService {
 		return true;
 	}
 
+	public List<MatchDetails> getAllMatches() {
+		return teamDAO.getAllMatches();
+	}
 }
