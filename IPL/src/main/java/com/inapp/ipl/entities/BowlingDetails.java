@@ -8,7 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
 @Table(name = "matchBowlingDetails")
 public class BowlingDetails {
@@ -30,10 +32,17 @@ public class BowlingDetails {
 	private int wickets;
 	private double economy;
 	private int balls;
+	private int dotBalls;
 	private int catches;
 	private int runout;
 	
 	
+	public int getDotBalls() {
+		return dotBalls;
+	}
+	public void setDotBalls(int dotBalls) {
+		this.dotBalls = dotBalls;
+	}
 	public double getEconomy() {
 		return economy;
 	}
