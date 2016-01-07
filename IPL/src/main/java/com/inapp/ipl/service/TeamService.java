@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.inapp.ipl.dao.TeamDAO;
-import com.inapp.ipl.entities.Match;
+import com.inapp.ipl.entities.MatchDetails;
 import com.inapp.ipl.entities.Member;
 
 
@@ -19,8 +19,6 @@ public class TeamService {
 		return teamDAO.getTeamMembers(teamId);
 		
 	}
-	public List<Match> getAllMatches() {
-		return teamDAO.getAllMatches();
-	}
+
 
 }
