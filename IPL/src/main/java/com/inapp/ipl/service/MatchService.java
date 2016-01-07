@@ -1,6 +1,5 @@
 package com.inapp.ipl.service;
 
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,34 +15,36 @@ import com.inapp.ipl.entities.MatchDetails;
 
 @Service
 public class MatchService {
-	
-@Autowired
-private TeamDAO teamDAO;
-@Autowired
-private MatchDAO matchDAO;
+
+	@Autowired
+	private TeamDAO teamDAO;
+	@Autowired
+	private MatchDAO matchDAO;
 
 	public boolean saveMatchDetails(Match match) {
 		int matchId = matchDAO.saveSummary(match.getSummary());
-		BattingDetails battingDetails1 = match.getFirstInnings()
+		List<BattingDetails> battingDetails1 = match.getFirstInnings()
 				.getBattingDetails();
-		BowlingDetails bowlingDetails1 = match.getFirstInnings()
+		List<BowlingDetails> bowlingDetails1 = match.getFirstInnings()
 				.getBowlingDetails();
-		BattingDetails battingDetails2 = match.getSecondInnings()
+		List<BattingDetails> battingDetails2 = match.getSecondInnings()
 				.getBattingDetails();
-		BowlingDetails bowlingDetails2 = match.getSecondInnings()
+		List<BowlingDetails> bowlingDetails2 = match.getSecondInnings()
 				.getBowlingDetails();
-		battingDetails1.setMatchId(matchId);
-		battingDetails2.setMatchId(matchId);
-		bowlingDetails1.setMatchId(matchId);
-		bowlingDetails2.setMatchId(matchId);
-		matchDAO.saveBattingDetails(Arrays.asList(battingDetails1,
-				battingDetails2));
-		matchDAO.saveBowlingDetails(Arrays.asList(bowlingDetails1,
-				bowlingDetails2));
+		battingDetails1.addAll(battingDetails2);
+		bowlingDetails1.addAll(bowlingDetails2);
+		matchDAO.saveBattingDetails(battingDetails1,matchId);
+		matchDAO.saveBowlingDetails(bowlingDetails1,matchId);
 		return true;
 	}
 
 	public List<MatchDetails> getAllMatches() {
 		return teamDAO.getAllMatches();
+	}
+
+	public  <T> T[] concat(T[] first, T[] second) {
+		T[] result = Arrays.copyOf(first, first.length + second.length);
+		System.arraycopy(second, 0, result, first.length, second.length);
+		return result;
 	}
 }

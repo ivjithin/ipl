@@ -12,24 +12,33 @@ import com.inapp.ipl.entities.MatchDetails;
 
 @Repository
 public class MatchDAO {
-private SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
+
 	@Transactional
 	public int saveSummary(MatchDetails summary) {
-		MatchDetails details = (MatchDetails) sessionFactory.getCurrentSession().save(summary);
-		return details.getId();		
+		MatchDetails details = (MatchDetails) sessionFactory
+				.getCurrentSession().save(summary);
+		return details.getId();
 	}
 
 	@Transactional
-	public void saveBattingDetails(List<BattingDetails> asList) {
-		sessionFactory.getCurrentSession().save(asList);
-		
+	public void saveBattingDetails(List<BattingDetails> battingDetails,
+			int matchId) {
+		for (BattingDetails details : battingDetails) {
+			details.setMatchId(matchId);
+			sessionFactory.getCurrentSession().save(details);
+		}
+
 	}
 
 	@Transactional
-	public void saveBowlingDetails(List<BowlingDetails> asList) {
-		sessionFactory.getCurrentSession().save(asList);
-		
-		
+	public void saveBowlingDetails(List<BowlingDetails> bowlingDetails,
+			int matchId) {
+		for (BowlingDetails details : bowlingDetails) {
+			details.setMatchId(matchId);
+			sessionFactory.getCurrentSession().save(details);
+		}
+
 	}
 
 }
