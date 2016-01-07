@@ -2,11 +2,20 @@
 	   "use strict";	
 	   
 	
-	   
+	var Match=(function(){
+		
+		
+		return {};
+	})();   
 	
 	var _root, admin = {	
 		boostrapComponentsFn : function(){
+			 $("table tbody").sortable({       
+				     
+				 stop: function(event,ui) {
 			
+				 }  
+			 }).disableSelection();
 			
 		},windowResizeHandler:function(){
 			
@@ -32,6 +41,7 @@
 		},
 		load : function() {
 			_root.setEvents();
+			_root.boostrapComponentsFn();
 			
 			//_root.indexPageSetUp();
 		},
