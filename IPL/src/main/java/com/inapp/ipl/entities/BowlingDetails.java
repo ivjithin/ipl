@@ -28,8 +28,24 @@ public class BowlingDetails {
 	private int maiden;
 	private int runsGiven;
 	private int wickets;
+	private double economy;
+	private int balls;
 	private int catches;
 	private int runout;
+	
+	
+	public double getEconomy() {
+		return economy;
+	}
+	public void setEconomy(double economy) {
+		this.economy = economy;
+	}
+	public int getBalls() {
+		return balls;
+	}
+	public void setBalls(int balls) {
+		this.balls = balls;
+	}
 	public int getId() {
 		return id;
 	}
