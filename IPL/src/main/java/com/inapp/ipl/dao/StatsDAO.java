@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class StatsDAO {
 
 	@Autowired
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 
 	static final String battingSql = "SELECT memberName,teamName,totMatches,totRuns,totBallsFaced,strikeRate,totFours,totSixes"
 			+ " from playersStats";

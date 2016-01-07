@@ -16,7 +16,7 @@ public class UserController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String UserLogin(@ModelAttribute(value = "login") Login login,
 			BindingResult result) {
-		return	"redirect:modules/admin/login.html";
+		return	"redirect:views/user/index.html";
 	}
 }
 

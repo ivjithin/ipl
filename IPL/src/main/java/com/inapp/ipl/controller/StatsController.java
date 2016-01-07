@@ -5,6 +5,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.inapp.ipl.service.StatsService;
 import com.inapp.ipl.utils.Response;
@@ -13,10 +14,11 @@ import com.inapp.ipl.utils.Response;
 @RequestMapping(value = "/stats")
 public class StatsController {
 	
-	@Autowired StatsService statsService;
+	@Autowired 
+	private StatsService statsService;
 	
-	@RequestMapping(value="/leadingRunScorers",method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Response getleadingRunScorers() throws Exception{
+	@RequestMapping(value="/leadingRunScorers",method = RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Response getleadingRunScorers() throws Exception{
 		Response customeResponse= new Response();
 		customeResponse.put(Response.RESULT, statsService.getleadingRunScorers());	
 		customeResponse.put(Response.STATUS,Response.STATUS_CODE_200);
@@ -24,8 +26,8 @@ public class StatsController {
 		
 	}
 	
-	@RequestMapping(value="/mostNoOfSixes",method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Response getMostNoOfSixes() throws Exception{
+	@RequestMapping(value="/mostNoOfSixes",method = RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE)
+			public @ResponseBody Response getMostNoOfSixes() throws Exception{
 		Response customeResponse= new Response();
 		customeResponse.put(Response.RESULT, statsService.getMostNoOfSixes());	
 		customeResponse.put(Response.STATUS,Response.STATUS_CODE_200);
@@ -33,8 +35,8 @@ public class StatsController {
 		
 	}
 	
-	@RequestMapping(value="/mostNoOfFours",method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Response getMostNoOfFours() throws Exception{
+	@RequestMapping(value="/mostNoOfFours",method = RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Response getMostNoOfFours() throws Exception{
 		Response customeResponse= new Response();
 		customeResponse.put(Response.RESULT, statsService.getMostNoOfFours());	
 		customeResponse.put(Response.STATUS,Response.STATUS_CODE_200);
@@ -42,24 +44,24 @@ public class StatsController {
 		
 	}
 	
-	@RequestMapping(value="/highestStrikeRate",method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Response gethighestStrikeRate() throws Exception{
+	@RequestMapping(value="/highestStrikeRate",method = RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Response gethighestStrikeRate() throws Exception{
 		Response customeResponse= new Response();
 		customeResponse.put(Response.RESULT, statsService.gethighestStrikeRate());	
 		customeResponse.put(Response.STATUS,Response.STATUS_CODE_200);
 		return customeResponse;
 		
 	}
-	@RequestMapping(value="/leadingWicketTakers",method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Response getLeadingWicketTakers() throws Exception{
+	@RequestMapping(value="/leadingWicketTakers",method = RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Response getLeadingWicketTakers() throws Exception{
 		Response customeResponse= new Response();
 		customeResponse.put(Response.RESULT, statsService.getLeadingWicketTakers());	
 		customeResponse.put(Response.STATUS,Response.STATUS_CODE_200);
 		return customeResponse;
 		
 	}
-	@RequestMapping(value="/bestEconomy",method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Response getBestEconomy() throws Exception{
+	@RequestMapping(value="/bestEconomy",method = RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Response getBestEconomy() throws Exception{
 		Response customeResponse= new Response();
 		customeResponse.put(Response.RESULT, statsService.getBestEconomy());	
 		customeResponse.put(Response.STATUS,Response.STATUS_CODE_200);
@@ -67,8 +69,8 @@ public class StatsController {
 		
 	}
 	
-	@RequestMapping(value="/mvp",method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Response getMVP() throws Exception{
+	@RequestMapping(value="/mvp",method = RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Response getMVP() throws Exception{
 		Response customeResponse= new Response();
 		customeResponse.put(Response.RESULT, statsService.getMVP());	
 		customeResponse.put(Response.STATUS,Response.STATUS_CODE_200);

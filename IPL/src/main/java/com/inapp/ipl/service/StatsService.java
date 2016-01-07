@@ -8,7 +8,8 @@ import com.inapp.ipl.dao.StatsDAO;
 @Service
 public class StatsService {
 	
-	@Autowired StatsDAO statsDAO;
+	@Autowired 
+	private StatsDAO statsDAO;
 
 	public Object getleadingRunScorers() throws Exception {
 		return statsDAO.getleadingRunScorers();
