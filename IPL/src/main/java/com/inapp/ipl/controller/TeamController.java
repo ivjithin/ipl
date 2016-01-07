@@ -22,7 +22,6 @@ public class TeamController {
 	{
 		Response customeResponse= new Response();
 		customeResponse.put(Response.RESULT, teamService.getTeamMembers(teamId));	
-		customeResponse.put("test","hello--");
 		return customeResponse;
 		
 	}
