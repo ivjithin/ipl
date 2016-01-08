@@ -18,6 +18,7 @@ public class TeamDAO {
 	private SessionFactory hbsession;
 	private static final String GET_TEAM_MEMBERS_BY_ID="from Member where  team.id=:teamId";	
 	private static final String GET_ALL_MATHCS="from MatchDetails";
+	private static final String GET_MATCH_DETAILS = "from MatchDetails where  id=:id";
 	@Transactional
 	public List<Member> getTeamMembers(int teamId)
 	{
@@ -47,6 +48,20 @@ public class TeamDAO {
 			 e.printStackTrace();
 		  }
 		return listMatch;
+	}
+	@Transactional
+	public MatchDetails getMatchSummary(int id) {
+		MatchDetails details = null;
+		 try {
+			  Query query = this.hbsession
+	                    .getCurrentSession()
+	                    .createQuery(GET_MATCH_DETAILS);	
+			  query.setParameter("id",id);
+			  details = (MatchDetails) query.list().get(0); 
+		  }catch(Exception e){
+			 e.printStackTrace();
+		  }
+		return details;
 	}
 
 }
