@@ -139,7 +139,7 @@ public class StatsDAO {
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public Object getBestEconomy() throws Exception {
-		String sql = bowlingSql + " order by economy";
+		String sql = bowlingSql + " where totBallsDelivered > 6 order by economy";
 
 		List<HashMap<String, Object>> aliasToValueMapList = null;
 		try {
