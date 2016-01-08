@@ -162,10 +162,10 @@ var contextPath="";
 				 	contentType:'application/json',	
 				 	data:saveData
 			};
-			console.log(saveData);
+			//console.log(saveData);
 			if(!!scndIngsScore){
-				alert("Saved ")
-				/*IPLCom.ajaxService.invoke(apiObj).done(function(res) {
+				//alert("Saved ")
+				IPLCom.ajaxService.invoke(apiObj).done(function(res) {
 					if(res.result){
 						$(".savedMsg").removeClass("error");
 						$(".savedMsg").addClass("success");							
@@ -188,7 +188,7 @@ var contextPath="";
 						 $(".savedMsg").fadeOut(1000);
 					},1000);				
 					$("html, body").animate({ scrollTop: 0 }, "slow");
-				}).fail(IPLCom.exceptionHandler.ajaxFailure);	*/
+				}).fail(IPLCom.exceptionHandler.ajaxFailure);	/**/
 			}else{
 				alert(" Please Enter 2nd Innings details ")
 			}
