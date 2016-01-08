@@ -52,13 +52,24 @@ var IPLCom=(function(){
 		}
 	};	
 	
+	
+	var oversToBalls=function(wickets){		
+		var over=Math.floor(wickets),
+			 decimal = wickets- Math.floor(wickets),
+			 balls=0;
+		balls=over*6+decimal*10;
+		return balls;
+	};
 
 	return {
 		ajaxService:ajaxService,
-		exceptionHandler:exceptionHandler
+		exceptionHandler:exceptionHandler,
+		oversToBalls:oversToBalls
 	}
 	
 })();
+
+
 
 
 
