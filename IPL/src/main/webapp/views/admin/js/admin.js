@@ -25,7 +25,7 @@ var contextPath="";
 				battingHtml+="</tr>";	
 								
 				bowlingHtml+="<tr  data-memberid='"+eachObj.id+"' data-teamid='"+eachObj.team.id+"'>";
-				bowlingHtml+="<th scope='row'>"+(i*1+1)+"</th>";
+				bowlingHtml+="<td scope='row'>"+(i*1+1)+"</td>";
 				bowlingHtml+="<td><input type='text' name='playername'  class='col-lg-12' value="+eachObj.name+" readOnly /></td>";
 				bowlingHtml+="<td><input type='text' name='overs'  class='col-lg-10' value='0' /></td>";
 				bowlingHtml+="<td><input type='text' name='maiden' class='col-lg-10' value='0'/></td>";
@@ -155,8 +155,8 @@ var contextPath="";
 				 	contentType:'application/json',	
 				 	data:saveData
 			};
-			$("select").select2("val", "-1");
-			/*IPLCom.ajaxService.invoke(apiObj).done(function(res) {
+	
+			IPLCom.ajaxService.invoke(apiObj).done(function(res) {
 				if(res.result){
 					$(".savedMsg").removeClass("error");
 					$(".savedMsg").addClass("success");							
