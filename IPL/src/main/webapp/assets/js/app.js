@@ -13,21 +13,21 @@ $(function() {
   return $('select').select2();
 });
 
-$(function() {
+/*$(function() {
   return $('.toggle-checkbox').bootstrapSwitch({
     size: "small"
   });
-});
+});*/
 
-$(function() {
+/*$(function() {
   return $('.match-height').matchHeight();
-});
+});*/
 
-$(function() {
+/*$(function() {
   return $('.datatable').DataTable({
     "dom": '<"top"fl<"clear">>rt<"bottom"ip<"clear">>'
   });
-});
+});*/
 
 $(function() {
   return $(".side-menu .nav .dropdown").on('show.bs.collapse', function() {
