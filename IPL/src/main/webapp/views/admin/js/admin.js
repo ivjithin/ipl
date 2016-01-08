@@ -81,7 +81,7 @@ var contextPath="";
 				battingObj["six"]=$(this).find("input[name=six]").val()*1;				
 				battingObj["isBatted"]=$(this).find("input[name=isBatted]").is(':checked')?1:0;
 				battingObj["wicketStatus"]=$(this).find("input[name=wicketStatus]").is(':checked')?1:0;				
-				battingObj["wicketDescription"]=$(this).find("input[name=wicketDescription]").val()*1;
+				battingObj["wicketDescription"]=$(this).find("input[name=wicketDescription]").val();
 				battingObj["innings"]=innings;
 				battingArr.push(battingObj);
 			});
