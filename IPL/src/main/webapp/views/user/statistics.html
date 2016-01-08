@@ -24,7 +24,7 @@
 <style>
 
 .mvpScore{
-height: 500px;
+height: 400px;
 
     overflow-y: scroll;
         overflow-x: hidden;
@@ -75,41 +75,52 @@ height: 500px;
                 <h1 class="page-header">Statistics </h1>               
             </div>
         </div>
-	<div class="row">
-	
-	
-	
-
-
-        <div class="col-sm-6">
-          <div class="sub-title"><h4>Leading Run Scorers</h4> </div>
-          <div class="mvpScore">
-	             
-  <table class="table table-bordered " id="ldngRun">
-	              <thead>
-	                  <tr>
-	                      <th>#</th>
-	                      <th class="col-md-2">Player</th>
-	                      <th class="col-md-2">Team</th>
-	                      <th>Matches</th>
-	                      <th>Runs</th>
-	                       <th>Balls</th>
-	                       <th>Strike Rate</th>
-	                      <th>4s</th>
-	                      <th>6s</th>
-	                  </tr>
-	              </thead>
-	              <tbody><!-- Leading Run scorer details  -->
-	              </tbody>
-	          </table>
-          </div>
-         
-      </div>
-       <div class="col-sm-6">
-          <div class="sub-title"><h4>Leading Wicket Takers</h4> </div>
-          <div class="mvpScore">
-	             
-  			<table class="table table-bordered " id="ldngWkt">
+        <div class="row">
+        
+         <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">      
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Leading Run Scorers</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                
+	                 <div class="mvpScore">
+		              <table class="table table-bordered " id="ldngRun">
+			              <thead>
+			                  <tr>
+			                      <th>#</th>
+			                      <th class="col-md-2">Player</th>
+			                      <th class="col-md-2">Team</th>
+			                      <th>Matches</th>
+			                      <th>Runs</th>
+			                       <th>Balls</th>
+			                       <th>Strike Rate</th>
+			                      <th>4s</th>
+			                      <th>6s</th>
+			                  </tr>
+			              </thead>
+			              <tbody><!-- Leading Run scorer details  -->
+			              </tbody>
+		         		 </table>
+	          		</div>
+	          		                    
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Leading Wicket Takers</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                     <div class="mvpScore">
+                     
+              <table class="table table-bordered " id="ldngWkt">
 	              <thead>
 	                  <tr>
 	                      <th>#</th>
@@ -124,17 +135,20 @@ height: 500px;
 	              <tbody><!-- Leading Wicket Takers details  -->
 	              </tbody>
 	          </table>
-          </div>
-         
-      </div>
-      </div>
-
-				<div class="row">
-			<div class="col-sm-6">
-				<div class="sub-title">
-					<h4>Most Valuable Players</h4>
-				</div>
-				<div class="mvpScore">
+	          
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Most Valuable Players</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="mvpScore">
 
 					<table class="table table-bordered " id="mvp">
 						<thead>
@@ -157,13 +171,19 @@ height: 500px;
 						</tbody>
 					</table>
 				</div>
-
-			</div>
-			<div class="col-sm-6">
-				<div class="sub-title">
-					<h4>Leading Wicket Takers</h4>
-				</div>
-				<div class="mvpScore">
+                </div>
+            </div>
+        </div>
+        
+           <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Leading Wicket Takers</a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+                   <div class="mvpScore">
 
 					<table class="table table-bordered " id="economy">
 						<thead>
@@ -182,9 +202,30 @@ height: 500px;
 						</tbody>
 					</table>
 				</div>
+                </div>
+            </div>
+        </div>
+        
+        
+<!--           <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">title</a>
+                </h4>
+            </div>
+            <div id="#collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+                   Table here 
+                </div>
+            </div>
+        </div> -->
+        
+        
+    </div>
+        </div>
 
-			</div>
-		</div>
+
+	
 		<hr>
 
      <!-- Below Common area -->

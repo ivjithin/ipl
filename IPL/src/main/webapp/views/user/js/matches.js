@@ -49,8 +49,7 @@ var contextPath="";
 				}else  if("S"===eachObj.matchType){						
 					$("#semiFinal_"+semi).html(_root.getScores(eachObj));
 					$("#semiFinalTitle_"+semi).html("Semi Final "+semi+" "+eachObj.team1.name+" vs "+eachObj.team2.name);		
-					semi++;
-				
+					semi++;				
 				}else  if("E"===eachObj.matchType){						
 					$("#elimi_match_"+elimi).html(_root.getScores(eachObj));
 					$("#elimi_title_"+elimi).html("Eliminator "+elimi+" "+eachObj.team1.name+" vs "+eachObj.team2.name);		
@@ -60,21 +59,20 @@ var contextPath="";
 					$("#quli_title_"+quli).html("Qualifier "+quli+" "+eachObj.team1.name+" vs "+eachObj.team2.name);		
 					quli++;
 				}
-			}	
-						//$("#teamContrainer").html(teamHTML);
+			}		
 		},
 		loadMatch:function(teamId){
 							
-				var apiObj={
-						url:contextPath+ "../../match",
-						method:'GET',
-					 	contentType:'application/json',			
-				};			
-				IPLCom.ajaxService.invoke(apiObj).done(function(res) {
-					_root.populateMatchesDtls(res.result);	
-				}).fail(IPLCom.exceptionHandler.ajaxFailure);	
+			var apiObj={
+					url:contextPath+ "../../match",
+					method:'GET',
+				 	contentType:'application/json',			
+			};			
+			IPLCom.ajaxService.invoke(apiObj).done(function(res) {
+				_root.populateMatchesDtls(res.result);	
+			}).fail(IPLCom.exceptionHandler.ajaxFailure);	
 				if(-1!==teamId){
-			}
+				}
 			
 		},	
 		boostrapComponentsFn : function(){

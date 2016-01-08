@@ -78,13 +78,13 @@ var contextPath="";
 			$("#scndInnWicketsOvers").html("( "+summary.scndIngsWicket+" wickets;"+summary.scndIngsOver+" overs)");
 			$("#scndInnScore").html(summary.scndIngsScore);
 			
-			var firstBalls=IPLCom.oversToBalls(summary.firstIngsOver),
-				firstRpo=summary.firstIngsScore*1/firstBalls,
-				secondBalls=IPLCom.oversToBalls(summary.scndIngsOver),
-				secondRpo=summary.scndIngsScore*1/secondBalls;
+			var //firstBalls=IPLCom.oversToBalls(summary.firstIngsOver),
+				firstRpo=summary.firstIngsScore*1/summary.firstIngsOver,
+				//secondBalls=IPLCom.oversToBalls(summary.scndIngsOver),
+				secondRpo=summary.scndIngsScore*1/summary.scndIngsOver;
 			
 			$("#firstInnRPO").html(firstRpo.toFixed(2)+" RPO");
-			$("#scndInnRPO").html(firstRpo.toFixed(2)+" RPO");
+			$("#scndInnRPO").html(secondRpo.toFixed(2)+" RPO");
 			$("#matchTitle").html(summary.team1.name+" vs "+summary.team2.name );
 			$("#matchResult").html(winnerTeamName+" "+summary.result);
 			
