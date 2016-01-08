@@ -14,15 +14,17 @@ import org.springframework.transaction.annotation.Transactional;
 public class StatsDAO {
 
 	@Autowired
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 
-	static final String battingSql = "SELECT sum(runs) as tot_runs,sum(balls) as tot_balls, (sum(runs)*100)/(sum(balls)) as strikeRate, "
-			+ "sum(fours) as tot_fours,sum(sixes) as tot_sixes FROM matchBattingDetails group by memberId ";
+	static final String battingSql = "SELECT memberName,imageUrl,teamName,totMatches,totRuns,totBallsFaced,strikeRate,totFours,totSixes"
+			+ " from playersStats";
+	static final String bowlingSql = "SELECT memberName,imageUrl,teamName,totMatches,totBallsDelivered,totWickets,totCatches,totRunOuts,totRunsGiven,economy"
+			+ " from playersStats";
 
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public Object getleadingRunScorers() throws Exception {
-		String sql = battingSql + " order by sum(runs)";
+		String sql = battingSql + " order by totRuns desc";
 
 		List<HashMap<String, Object>> aliasToValueMapList = null;
 		try {
@@ -45,7 +47,7 @@ public class StatsDAO {
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public Object getMostNoOfSixes() throws Exception {
-		String sql = battingSql + " order by sum(sixes)";
+		String sql = battingSql + " order by totSixes desc";
 
 		List<HashMap<String, Object>> aliasToValueMapList = null;
 		try {
@@ -68,7 +70,7 @@ public class StatsDAO {
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public Object getMostNoOfFours() throws Exception {
-		String sql = battingSql + " order by sum(fours)";
+		String sql = battingSql + " order by totFours desc";
 
 		List<HashMap<String, Object>> aliasToValueMapList = null;
 		try {
@@ -91,7 +93,7 @@ public class StatsDAO {
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public Object gethighestStrikeRate() throws Exception {
-		String sql = battingSql + " having sum(balls)> 10 order by (sum(runs)*100)/(sum(balls))";
+		String sql = battingSql + " where totBallsFaced > 10 order by strikeRate desc";
 
 		List<HashMap<String, Object>> aliasToValueMapList = null;
 		try {
@@ -110,4 +112,76 @@ public class StatsDAO {
 
 		return aliasToValueMapList;
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Transactional
+	public Object getLeadingWicketTakers() throws Exception {
+		String sql = bowlingSql + " order by totWickets desc";
+
+		List<HashMap<String, Object>> aliasToValueMapList = null;
+		try {
+
+			Query query = this.sessionFactory
+					.getCurrentSession()
+					.createSQLQuery(sql)
+					.setResultTransformer(
+							AliasToEntityMapResultTransformer.INSTANCE);
+
+			aliasToValueMapList = query.list();
+
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return aliasToValueMapList;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Transactional
+	public Object getBestEconomy() throws Exception {
+		String sql = bowlingSql + " order by economy";
+
+		List<HashMap<String, Object>> aliasToValueMapList = null;
+		try {
+
+			Query query = this.sessionFactory
+					.getCurrentSession()
+					.createSQLQuery(sql)
+					.setResultTransformer(
+							AliasToEntityMapResultTransformer.INSTANCE);
+
+			aliasToValueMapList = query.list();
+
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return aliasToValueMapList;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	@Transactional
+	public Object getMVP() throws Exception {
+		String sql = "select memberName,imageUrl,teamName,totMatches,totRuns,totFours,totSixes,totWickets,totCatches,totRunOuts,point from"
+				+ " playersStats order by point desc";
+
+		List<HashMap<String, Object>> aliasToValueMapList = null;
+		try {
+
+			Query query = this.sessionFactory
+					.getCurrentSession()
+					.createSQLQuery(sql)
+					.setResultTransformer(
+							AliasToEntityMapResultTransformer.INSTANCE);
+
+			aliasToValueMapList = query.list();
+
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return aliasToValueMapList;
+	}
+	
 }

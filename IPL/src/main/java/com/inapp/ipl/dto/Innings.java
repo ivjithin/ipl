@@ -1,26 +1,28 @@
 package com.inapp.ipl.dto;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlRootElement;
+
 import com.inapp.ipl.entities.BattingDetails;
 import com.inapp.ipl.entities.BowlingDetails;
 
 @XmlRootElement
 public class Innings {
-	private BattingDetails battingDetails;
-	private BowlingDetails bowlingDetails;
-	
-	public BattingDetails getBattingDetails() {
+	private List<BattingDetails> battingDetails;
+	private List<BowlingDetails> bowlingDetails;
+	public List<BattingDetails> getBattingDetails() {
 		return battingDetails;
 	}
-	public void setBattingDetails(BattingDetails battingDetails) {
+	public void setBattingDetails(List<BattingDetails> battingDetails) {
 		this.battingDetails = battingDetails;
 	}
-	public BowlingDetails getBowlingDetails() {
+	public List<BowlingDetails> getBowlingDetails() {
 		return bowlingDetails;
 	}
-	public void setBowlingDetails(BowlingDetails bowlingDetails) {
+	public void setBowlingDetails(List<BowlingDetails> bowlingDetails) {
 		this.bowlingDetails = bowlingDetails;
 	}
-	
+
 	
 }
