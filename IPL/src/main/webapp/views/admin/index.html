@@ -124,50 +124,75 @@
             <!-- Main Content -->
             <div class="container-fluid">
                 <div class="side-body">
-      
-
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="card">
-
-								<div class="card-body">
-									<form class="form-inline">
-										<div>
-
-										
+      <!-- Match summary starts here  -->
+				<div class="card">
+							<div class="card-body">
+								<div class="row">
+										<div class="col-lg-3">
 											<div class="form-group" >
-												<label for="exampleInputName2">Match Id </label>
-												<input type="text" id="matchNo" />
+												<label for="matchNo">Match Id &nbsp;&nbsp;&nbsp;&nbsp; </label>
+												<input type="text" id="matchNo" style="width:110px" />
 											</div>
-												<div class="form-group">&nbsp;&nbsp;</div>
+										</div>
+										<div class="col-lg-2">
+													<div class="form-group">
+														<label for="exampleInputName2">Match Type</label> 
+														<select id="matchType">
+															<option value="-1"> Match Type</option>
+															<option value="Q">Qualifier</option>
+															<option value="E">Eliminator</option>
+															<option value="S">Semi Final</option>
+															<option value="F">Final</option>
+														
+														</select>
+													</div>
+										</div>
+										<div class="col-lg-3">
+													<div class="form-group">
+														<label for="matchToss">Toss </label> 
+														<select id="matchToss">
+															<option value="-1">Select Team</option>
+															<option value="1">Mad Catz</option>
+															<option value="2">Win Gaurus</option>
+															<option value="3">Meduza</option>
+															<option value="4">Theeppori Bros</option>
+															<option value="5">Dragons</option>
+														</select>
+													</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-3">
 											<div class="form-group">
-												<label for="exampleInputName2">Match Type </label> 
-												<select id="matchType">
-													<option value="-1"> Match Type</option>
-													<option value="Q">Qualifier</option>
-													<option value="E">Eliminator</option>
-													<option value="S">Semi Final</option>
-													<option value="F">Final</option>
-												
-												</select>
+											<label for="exampleInputName2">Ist Inning &nbsp;&nbsp;</label> 
+											<select id="firstInnTeamSelect" data-innType="1">
+												<option value="-1">Select Team</option>
+												<option value="1">Mad Catz</option>
+												<option value="2">Win Gaurus</option>
+												<option value="3">Meduza</option>
+												<option value="4">Theeppori Bros</option>
+												<option value="5">Dragons</option>
+											</select>
 											</div>
-												<div class="form-group">&nbsp;&nbsp;</div>
+										</div>
+										<div class="col-lg-3">
 											<div class="form-group">
-												<label for="exampleInputName2">Toss </label> 
-												<select id="matchToss">
-													<option value="-1">Select Team</option>
-													<option value="1">Mad Catz</option>
-													<option value="2">Win Gaurus</option>
-													<option value="3">Meduza</option>
-													<option value="4">Theeppori Bros</option>
-													<option value="5">Dragons</option>
-												</select>
-											</div>
-											
-											
-				<br/><br/>					
+											<label for="exampleInputName2">IInd Inning &nbsp;&nbsp;</label> 
+											<select id="secondInnTeamSelect" data-innType="2">
+												<option value="-1">Select Team</option>
+												<option value="1">Mad Catz</option>
+												<option value="2">Win Gaurus</option>
+												<option value="3">Meduza</option>
+												<option value="4">Theeppori Bros</option>
+												<option value="5">Dragons</option>
+											</select>
+											</div>										
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-3">
 											<div class="form-group">
-												<label for="exampleInputName2">Winner &nbsp;&nbsp;</label> 
+												<label for="exampleInputName2">Winner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
 												<select id="winnerTeam">
 													<option value="-1">Select Team</option>
 													<option value="1">Mad Catz</option>
@@ -177,20 +202,25 @@
 													<option value="5">Dragons</option>
 												</select>
 											</div>
-											
+										</div>
+										<div class="col-lg-3">
 											<div class="form-group" >
-												<label for="exampleInputName2">&nbsp;&nbsp;Results </label>
+												<label for="exampleInputName2">Results &nbsp;&nbsp;</label>
 												<input type="text" id="winnerTeamResults" />
 											</div>
-                               <div class="sub-title"> &nbsp; </div>      	
 										</div>
+									</div>
+									
+								</div>					
+							</div>
 
-										
+
+			<!-- Match summary ends here  -->
 									
-									</form>
-									
-									
-	
+	<div class="row">
+					<div class="col-xs-12">
+						<div class="card">									
+	<div class="card-body">
 	<!--  Tabs Starts here  -->								
    <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Ist Innings </a></li>
@@ -200,19 +230,7 @@
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3>Ist Innings </h3>
-
-			
-<!-- Ist Inings starts here  -->
-
-<select id="firstInnTeamSelect" data-innType="1">
-	<option value="-1">Select Team</option>
-	<option value="1">Mad Catz</option>
-	<option value="2">Win Gaurus</option>
-	<option value="3">Meduza</option>
-	<option value="4">Theeppori Bros</option>
-	<option value="5">Dragons</option>
-</select>
+    
 
 <div class="row">
       <div class="col-sm-12">
@@ -261,7 +279,7 @@
  </div>
 
  <div  class="row">
-         <div > <b> Total   </b> </div>
+         <div style="margin-left: 15px;"> <b> Total   </b> </div>
             <div class="form-group col-lg-2" >    	
     		<input type="text" class="form-control" id="firstIngsScore" placeholder="Score"> 
 		 </div>
@@ -280,17 +298,7 @@
 <!-- Ist Inning ends here -->
     </div>
     <div id="menu1" class="tab-pane fade">
-      <h3>IInd Innings </h3>
-<!-- IInd Innings starts here  -->
 
-<select id="secondInnTeamSelect" data-innType="2">
-	<option value="-1">Select Team</option>
-	<option value="1">Mad Catz</option>
-	<option value="2">Win Gaurus</option>
-	<option value="3">Meduza</option>
-	<option value="4">Theeppori Bros</option>
-	<option value="5">Dragons</option>
-</select>
 
 <div class="row">
         <div class="col-sm-12">
@@ -339,7 +347,7 @@
  </div>
 
  <div  class="row">
- 	         <div > <b> Total   </b> </div>
+ 	         <div style="margin-left: 15px;" > <b> Total   </b> </div>
               <div class="form-group col-lg-2" >
       	
       		<input type="text" class="form-control" id="scndIngsScore" placeholder="Score"> 
