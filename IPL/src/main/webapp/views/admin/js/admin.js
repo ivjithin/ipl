@@ -11,7 +11,6 @@ var contextPath="";
 			
 			for(var i in battingDtls){
 				var eachObj=battingDtls[i];	
-			console.log(eachObj)
 				battingHtml+="<tr data-memberid='"+eachObj.id+"' data-teamid='"+eachObj.team.id+"'>";
 				battingHtml+="<td scope='row'>"+(i*1+1)+"</td>";
 				battingHtml+="<td><input type='text' name='playername' class='col-lg-12' value="+eachObj.name+" readOnly ></td>";
@@ -140,9 +139,6 @@ var contextPath="";
 			saveData["firstInnings"]=firstInnings;
 			saveData["secondInnings"]=secondInnings;
 			
-			
-			
-			console.log( " saveData" ,saveData)
 			saveData=JSON.stringify(saveData);
 			
 			var apiObj={
@@ -153,8 +149,20 @@ var contextPath="";
 			};
 		
 			IPLCom.ajaxService.invoke(apiObj).done(function(res) {
-				loadBattingTables(res.result,innType);
-					console.log(" res",res.result);			
+				if(res.result){
+					$(".savedMsg").removeClass("error");
+					$(".savedMsg").addClass("success");							
+					$(".savedMsg").html("Saved Successfully");
+				}else{
+					$(".savedMsg").removeClass("success");	
+					$(".savedMsg").addClass("error");						
+					$(".savedMsg").html(res.message);
+				}
+				$(".savedMsg").show();
+				setTimeout(function(){
+					 $(".savedMsg").fadeOut(1000);
+				},1000);				
+				$("html, body").animate({ scrollTop: 0 }, "slow");
 			}).fail(IPLCom.exceptionHandler.ajaxFailure);/*	*/
 			
 			

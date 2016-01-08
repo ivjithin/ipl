@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Flat Admin V.2 - Free Bootstrap Admin Templates</title>
+    <title>IPL : Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
@@ -22,6 +22,22 @@
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/themes/flat-blue.css">
+    <style>
+    
+    .savedMsg{
+    
+        display:none;
+	    font-weight: bold;
+	    margin-left: 500px;
+    	margin-top: 15px;
+    }
+    .savedMsg.error{
+    color: red;
+    }
+    .savedMsg.success{
+    color: green;
+    }
+    </style>
 </head>
 
 <body class="flat-blue">
@@ -37,6 +53,7 @@
                             <li>Table</li>
                             <li class="active">Add Match</li>
                         </ol>
+                        <div class="savedMsg"> </div>
                         <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
                             <i class="fa fa-th icon"></i>
                         </button>
