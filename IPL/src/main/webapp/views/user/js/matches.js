@@ -53,7 +53,7 @@ var contextPath="";
 				
 				}else  if("E"===eachObj.matchType){						
 					$("#elimi_match_"+elimi).html(_root.getScores(eachObj));
-					$("#elimi_title_"+elimi).html("Eliminator "+elimi+" "+semi+eachObj.team1.name+" vs "+eachObj.team2.name);		
+					$("#elimi_title_"+elimi).html("Eliminator "+elimi+" "+eachObj.team1.name+" vs "+eachObj.team2.name);		
 					elimi++;
 				}else  if("Q"===eachObj.matchType){						
 					$("#quli_match_"+quli).html(_root.getScores(eachObj));
