@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.inapp.ipl.dao.MatchDAO;
 import com.inapp.ipl.dao.TeamDAO;
+import com.inapp.ipl.dto.Innings;
 import com.inapp.ipl.dto.Match;
 import com.inapp.ipl.entities.BattingDetails;
 import com.inapp.ipl.entities.BowlingDetails;
@@ -46,6 +47,14 @@ public class MatchService {
 	public Match getMatchDetails(int id) {
 		Match match = new Match();
 		match.setSummary(teamDAO.getMatchSummary(id));
+		Innings firstInnings = new Innings();
+		Innings secondInnings = new Innings();
+		firstInnings.setBattingDetails(teamDAO.getBattingDetails(id,1));
+		firstInnings.setBowlingDetails(teamDAO.getBowlingDetails(id,1));
+		secondInnings.setBattingDetails(teamDAO.getBattingDetails(id,2));
+		secondInnings.setBowlingDetails(teamDAO.getBowlingDetails(id,2));
+		match.setFirstInnings(firstInnings);
+		match.setSecondInnings(secondInnings);
 		return match;
 	}
 }
